@@ -3,6 +3,28 @@
   <head>
     <meta name="google-site-verification" content="cRbpZ_2up-c2j-L_1c3tLFHMjncsu_CrLTPPLnstwlA" />
     <meta charset="UTF-8" />
+    <!--GA-START-->
+    <!-- Google Analytics (26.11.2026) + подсчёт нажатий «WhatsApp» -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8K5WVXYXGF"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-8K5WVXYXGF');
+      document.addEventListener('click', function (e) {
+        var a = e.target.closest && e.target.closest('a[href*="wa.me"]');
+        if (!a) return;
+        var t = '';
+        try { t = decodeURIComponent((a.href.split('text=')[1] || '')); } catch (x) {}
+        var m = t.match(/«([^»]+)»/);
+        gtag('event', 'whatsapp_click', {
+          item_name: m ? m[1] : 'общая кнопка',
+          page_path: location.pathname,
+          transport_type: 'beacon'
+        });
+      }, true);
+    </script>
+    <!--GA-END-->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Детские товары в Бишкеке: бутылочки, пустышки, аспираторы, небулайзеры, товары для новорождённых и мам. ТРК «Таш-Рабат», бутик В3. Цены на сайте, заказ в WhatsApp." />
     <title>Детские товары в Бишкеке — для новорождённых и мам | MamaMira</title>

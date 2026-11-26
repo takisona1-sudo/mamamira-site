@@ -2,6 +2,28 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
+<!--GA-START-->
+    <!-- Google Analytics (26.11.2026) + подсчёт нажатий «WhatsApp» -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8K5WVXYXGF"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-8K5WVXYXGF');
+      document.addEventListener('click', function (e) {
+        var a = e.target.closest && e.target.closest('a[href*="wa.me"]');
+        if (!a) return;
+        var t = '';
+        try { t = decodeURIComponent((a.href.split('text=')[1] || '')); } catch (x) {}
+        var m = t.match(/«([^»]+)»/);
+        gtag('event', 'whatsapp_click', {
+          item_name: m ? m[1] : 'общая кнопка',
+          page_path: location.pathname,
+          transport_type: 'beacon'
+        });
+      }, true);
+    </script>
+    <!--GA-END-->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Baby Brezza Bottle Washer Pro — мойка, стерилизатор и сушилка 3 в 1 — купить в Бишкеке | MamaMira</title>
     <meta name="description" content="Baby Brezza Bottle Washer Pro — мойка, стерилизатор и сушилка 3 в 1. Цена: 40 900 сом. Купить в Бишкеке, ТРК «Таш-Рабат», бутик В3, заказ в WhatsApp." />
